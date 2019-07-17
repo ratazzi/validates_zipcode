@@ -143,11 +143,13 @@ describe ValidatesZipcode, '#validate_each' do
       zipcode_should_be_valid(record)
       record = build_record('LT-00110', 'LT')
       zipcode_should_be_valid(record)
+      record = build_record('71111', 'LT')
+      zipcode_should_be_valid(record)
     end
 
     it 'does not validate with an invalid zipcode' do
-      record = build_record('21006', 'LT')
-      zipcode_should_be_invalid(record, '21006')
+      record = build_record('2100', 'LT')
+      zipcode_should_be_invalid(record, '2100')
     end
   end
 
